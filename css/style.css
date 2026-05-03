@@ -1,0 +1,137 @@
+@import 'nullstyle';
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gravitas+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    background-color: white;
+    background-attachment: fixed;
+    background-image: url(../img/ws.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+}
+:root{
+    --gg-g:rotate(45deg);
+    --hh-h:rotate(-45deg);
+    --hh-t:none
+}
+.cl{
+    background: transparent;
+    position: relative;
+    right: 10px;
+    &::before{
+        content: "";
+        position: absolute;
+        bottom: 43%;
+        right: -45px;
+        transform: var(--gg-g);
+        background-color: white;
+        width: 20px;
+        height: 3px;
+        transition: var(--hh-t);
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: 43%;
+        right: -45px;
+        transform: var(--hh-h);
+        background-color: white;
+        width: 20px;
+        height: 3px;
+        transition: var(--hh-t);
+    }
+}
+.cll{
+    @extend .cl
+}
+.wastaTeam{
+    margin-left: 100px;
+    background: transparent;
+    margin-top: -8px;
+}
+.header-navigation{
+    display:flex;
+    justify-content: space-between;
+    width: 350px;
+    margin-left: 70px;
+    padding-right: 40px;
+    font-family: 'Anton';
+}
+header{
+    display: inline-flex;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 60px;
+    width: 600px;
+}
+.navigation{
+    display: inline-block;
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-family: 'Anton';
+    background: transparent;
+    color: rgb(255, 255, 255);
+    position: relative;
+    &:hover{
+       &::after{
+            content:"";
+            position:absolute;
+            bottom:0;
+            left:13%;
+            width:20px;
+            height:3px;
+            background: rgba(255, 255, 255, 0.6)
+        }
+    }
+}
+.kk{
+    display: inline-block;
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-family: 'Anton';
+    background: transparent;
+    color: rgb(255, 255, 255);
+    position: relative;   
+    &::after{
+        content:"";
+        position:absolute;
+        bottom:0;
+        left:13%;
+        width:20px;
+        height:3px;
+        background: rgba(255, 255, 255)
+    }
+}
+.uu{
+    display: flex;
+}
+@media (max-width: 767px) {
+    header{
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+    }
+    .header-navigation{
+        display: grid;
+        justify-content: center;
+        align-self: center;
+        height: 400px;
+        margin-left: 40px;
+    }
+    .kk{
+       &::after{
+        display: none;
+        }
+    }
+    .wastaTeam{
+        display: none;
+    }
+    .cl{
+        display: grid;
+        align-self:first baseline;
+        margin-top: 30px;
+    }
+}
